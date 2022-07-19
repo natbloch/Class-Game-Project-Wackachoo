@@ -1,0 +1,100 @@
+/* common stuff */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background:#000 url("img/fullbg.jpg");
+		font-family: 'Fontdiner Swanky', cursive;
+}
+
+/* field layout & elements */
+
+#field {
+    position: relative;
+		margin:40px auto;
+    background:green url(img/bg.jpg);
+    height: 500px;
+		width:800px;
+		cursor: url(img/hammer.png), auto;
+		border-radius: 30px;
+}
+#field.md {
+		cursor: url(img/hammerdown.png), auto;
+}
+#field > button {
+    background-color: green;
+    border: 2px solid #000;
+    border-radius: 10px;
+    color: #fff;
+    font-family: "Fontdiner Swanky",cursive;
+    font-size: 24px;
+    left: 22px;
+    padding: 0 10px;
+    position: absolute;
+    top: 27px;
+}
+#field > button:hover {
+		background-color: #fff;
+		color:green;
+		cursor:pointer;
+}
+#field > .scoreboard {
+    color: darkgreen;
+    float: right;
+    position: absolute;
+    right: 36px;
+    top: 8px;
+    width: 50px;
+}
+#field > .scoreboard > p{
+	font-size:30px;
+	line-height:40px;	
+}
+
+/* pika styles (all inside .ctr element) */
+
+#field > .ctr {
+    height: 100px;
+    position: absolute;
+    width: 100px;
+		background: transparent url("img/hole.png") no-repeat scroll bottom left;
+}
+#field > .ctr > .pika {
+    bottom: 11px;
+    height: 90px;
+    left: 10px;
+    overflow: hidden;
+    position: absolute;
+    width: 80px;
+}
+#field > .ctr > .pika > div {
+    background: transparent url("img/pikasprite.png") repeat scroll 0 0;
+    height: 95px;
+    transform: translateY(95px);
+    width: 80px;
+}
+#field > .ctr > .pika > div.dead {
+    background-position: 80px 0;
+}
+
+/* pika action styles */
+
+@keyframes bounce {
+	0% { transform: translateY(90px);}
+	50% { transform: translateY(0px); }
+	100% { transform: translateY(90px); }
+}
+#field > .ctr > .pika > div.s1 {
+    animation-duration: 3s; 
+    animation-name: bounce;
+}
+#field > .ctr > .pika > div.s2 {
+    animation-duration: 2s;
+    animation-name: bounce;
+}
+#field > .ctr > .pika > div.s3 {
+    animation-duration: 1s;
+    animation-name: bounce;
+}
